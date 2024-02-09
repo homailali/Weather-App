@@ -1,14 +1,11 @@
-package life.homail.weatherapp.MainApp;
-
+package life.homail.weatherapp.HomePage;
 import android.content.Intent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
-
 import life.homail.weatherapp.R;
 import life.homail.weatherapp.SearchPage.WAppSearchPgMain;
-
-public class WAppHomeViews {
+public class WAppHomeViews{
     // Fields
     protected Button searchBtn;
     // TextViews
@@ -40,9 +37,6 @@ public class WAppHomeViews {
         this.searchBtn=this.weatherAppHomePage.findViewById(R.id.searchBtn);
         this.searchBtn.setOnClickListener(this::searchBtnHandler);
     }
-
-
-
     // Handling search btn events here but i'd say create a separate file in feature
     private void searchBtnHandler(View view){
         Intent intent=new Intent(this.weatherAppHomePage, WAppSearchPgMain.class);

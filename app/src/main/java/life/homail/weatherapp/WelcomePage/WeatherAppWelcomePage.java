@@ -7,7 +7,7 @@ import android.view.View;
 import android.view.Window;
 import android.widget.Button;
 import androidx.appcompat.app.AppCompatActivity;
-import life.homail.weatherapp.MainApp.WeatherAppHomePage;
+import life.homail.weatherapp.HomePage.WeatherAppHomePage;
 import life.homail.weatherapp.R;
 public class WeatherAppWelcomePage extends AppCompatActivity{
     // Fields
