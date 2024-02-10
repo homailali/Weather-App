@@ -1,18 +1,16 @@
 package life.homail.weatherapp.HomePage;
 import android.os.Handler;
 
-import java.util.ArrayList;
-
 import life.homail.weatherapp.WDPlusWDHolder.FeatureDataClass;
 import life.homail.weatherapp.WDPlusWDHolder.WDHolder;
 import life.homail.weatherapp.WeatherCalculator.WCMain;
 public class SetValuesForTempInHP {
     // Fields
-    private WeatherAppHomePage weatherAppHomePage;
+    private WAHomePageMain WAHomePageMain;
     private Handler handler=new Handler();
     // Constructor
-    public SetValuesForTempInHP(WeatherAppHomePage weatherAppHomePage) {
-        this.weatherAppHomePage = weatherAppHomePage;
+    public SetValuesForTempInHP(WAHomePageMain WAHomePageMain) {
+        this.WAHomePageMain = WAHomePageMain;
     }
     // Methods
     protected void setValuesForTempInHPMain(){
@@ -23,11 +21,11 @@ public class SetValuesForTempInHP {
         }
     }
     private void setValuesForCurrentData(){
-        this.weatherAppHomePage.wAppHomeViews.actualTempTv.setText(WDHolder.getWdHolder().getCurrentWeatherData().getActualTemp()+"°C");
-        this.weatherAppHomePage.wAppHomeViews.feelsLikeTv.setText("Feels like "+WDHolder.getWdHolder().getCurrentWeatherData().getFeelsLikeTemp()+"°C");
-        this.weatherAppHomePage.wAppHomeViews.minTempTv.setText("˅ "+WDHolder.getWdHolder().getCurrentWeatherData().getMinTemp()+"°C");
-        this.weatherAppHomePage.wAppHomeViews.maxTempTv.setText("^ "+WDHolder.getWdHolder().getCurrentWeatherData().getMaxTemp()+"°C");
-        this.weatherAppHomePage.wAppHomeViews.cityNameTv.setText(WDHolder.getWdHolder().getCurrentWeatherData().getCityName());
+        this.WAHomePageMain.wAppHomeViews.actualTempTv.setText(WDHolder.getWdHolder().getCurrentWeatherData().getActualTemp()+"°C");
+        this.WAHomePageMain.wAppHomeViews.feelsLikeTv.setText("Feels like "+WDHolder.getWdHolder().getCurrentWeatherData().getFeelsLikeTemp()+"°C");
+        this.WAHomePageMain.wAppHomeViews.minTempTv.setText("˅ "+WDHolder.getWdHolder().getCurrentWeatherData().getMinTemp()+"°C");
+        this.WAHomePageMain.wAppHomeViews.maxTempTv.setText("^ "+WDHolder.getWdHolder().getCurrentWeatherData().getMaxTemp()+"°C");
+        this.WAHomePageMain.wAppHomeViews.cityNameTv.setText(WDHolder.getWdHolder().getCurrentWeatherData().getCityName());
     }
     // Others
     protected void getDataForFirstTime(){
@@ -54,6 +52,6 @@ public class SetValuesForTempInHP {
         WDHolder.getWdHolder().getFeatureDataClassesArr().add(new FeatureDataClass("dd/MM/yyyy","hh:mm a/p","T°C"));
         WDHolder.getWdHolder().getFeatureDataClassesArr().add(new FeatureDataClass("dd/MM/yyyy","hh:mm a/p","T°C"));
         WDHolder.getWdHolder().getFeatureDataClassesArr().add(new FeatureDataClass("dd/MM/yyyy","hh:mm a/p","T°C"));
-        this.weatherAppHomePage.adapter.notifyDataSetChanged();
+        this.WAHomePageMain.adapter.notifyDataSetChanged();
     }
 }

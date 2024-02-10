@@ -4,7 +4,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 import androidx.recyclerview.widget.RecyclerView;
-import java.util.ArrayList;
+
 import life.homail.weatherapp.R;
 import life.homail.weatherapp.SearchPage.WAppSearchPgMain;
 public class WAppHomeViews{
@@ -19,10 +19,10 @@ public class WAppHomeViews{
     // Rc View
     protected RecyclerView rcView;
     // Main Activity
-    private WeatherAppHomePage weatherAppHomePage;
+    private WAHomePageMain WAHomePageMain;
     // Constructor
-    public WAppHomeViews(WeatherAppHomePage weatherAppHomePage) {
-        this.weatherAppHomePage = weatherAppHomePage;
+    public WAppHomeViews(WAHomePageMain WAHomePageMain) {
+        this.WAHomePageMain = WAHomePageMain;
         this.thingsToDoWhenConstrcutorIsInvoked();
     }
     // Methods
@@ -32,22 +32,22 @@ public class WAppHomeViews{
         this.initializeAndSetHandlerForSearchBtn();
     }
     private void initializeTextViews(){
-        this.minTempTv=this.weatherAppHomePage.findViewById(R.id.minTempTv);
-        this.maxTempTv=this.weatherAppHomePage.findViewById(R.id.maxTempTv);
-        this.cityNameTv=this.weatherAppHomePage.findViewById(R.id.cityNameTv);
-        this.feelsLikeTv=this.weatherAppHomePage.findViewById(R.id.feelsLikeTv);
-        this.actualTempTv=this.weatherAppHomePage.findViewById(R.id.actualTempTv);
+        this.minTempTv=this.WAHomePageMain.findViewById(R.id.minTempTv);
+        this.maxTempTv=this.WAHomePageMain.findViewById(R.id.maxTempTv);
+        this.cityNameTv=this.WAHomePageMain.findViewById(R.id.cityNameTv);
+        this.feelsLikeTv=this.WAHomePageMain.findViewById(R.id.feelsLikeTv);
+        this.actualTempTv=this.WAHomePageMain.findViewById(R.id.actualTempTv);
     }
     private void initializeRcView(){
-        this.rcView=this.weatherAppHomePage.findViewById(R.id.rcView);
+        this.rcView=this.WAHomePageMain.findViewById(R.id.rcView);
     }
     private void initializeAndSetHandlerForSearchBtn(){
-        this.searchBtn=this.weatherAppHomePage.findViewById(R.id.searchBtn);
+        this.searchBtn=this.WAHomePageMain.findViewById(R.id.searchBtn);
         this.searchBtn.setOnClickListener(this::searchBtnHandler);
     }
     // Handling search btn events here but i'd say create a separate file in feature
     private void searchBtnHandler(View view){
-        Intent intent=new Intent(this.weatherAppHomePage, WAppSearchPgMain.class);
-        this.weatherAppHomePage.startActivity(intent);
+        Intent intent=new Intent(this.WAHomePageMain, WAppSearchPgMain.class);
+        this.WAHomePageMain.startActivity(intent);
     }
 }

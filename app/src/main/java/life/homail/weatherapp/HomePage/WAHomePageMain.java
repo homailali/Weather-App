@@ -2,16 +2,10 @@ package life.homail.weatherapp.HomePage;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.Window;
-
 import life.homail.weatherapp.R;
-import life.homail.weatherapp.WDPlusWDHolder.WDHolder;
-
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
-
-import java.util.ArrayList;
-
-public class WeatherAppHomePage extends AppCompatActivity {
+public class WAHomePageMain extends AppCompatActivity {
     // Fields
     protected WAppHomeViews wAppHomeViews;
     protected SetValuesForTempInHP setValuesForTempInHP=new SetValuesForTempInHP(this);

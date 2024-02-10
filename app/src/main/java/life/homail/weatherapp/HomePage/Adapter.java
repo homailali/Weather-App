@@ -9,15 +9,15 @@ import life.homail.weatherapp.R;
 import life.homail.weatherapp.WDPlusWDHolder.WDHolder;
 public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder>{
     // Fields
-    private WeatherAppHomePage weatherAppHomePage;
+    private WAHomePageMain WAHomePageMain;
     // Constructor
-    public Adapter(WeatherAppHomePage weatherAppHomePage) {
-        this.weatherAppHomePage = weatherAppHomePage;
+    public Adapter(WAHomePageMain WAHomePageMain) {
+        this.WAHomePageMain = WAHomePageMain;
     }
     // Methods
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType){
-        View view= LayoutInflater.from(this.weatherAppHomePage).inflate(R.layout.row_design_for_adapter,parent,false);
+        View view= LayoutInflater.from(this.WAHomePageMain).inflate(R.layout.row_design_for_adapter,parent,false);
         ViewHolder viewHolder=new ViewHolder(view);
         return viewHolder;
     }
