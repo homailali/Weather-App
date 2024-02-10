@@ -2,17 +2,15 @@ package life.homail.weatherapp.WDPlusWDHolder;
 public class WDHolder{
     // Constructor
     private WeatherData weatherData;
-    private boolean ifAllowedToSetData=false;
-
+    private boolean ifAllowedToSetData;
     private static WDHolder wdHolder=new WDHolder();
     // Methods
-
     // Getters
     public static WDHolder getWdHolder(){
         return wdHolder;
     }
 
-    public boolean getIsIfAllowedToSetData() {
+    public boolean getIfAllowedToSetData() {
         return ifAllowedToSetData;
     }
     public WeatherData getWeatherData(){

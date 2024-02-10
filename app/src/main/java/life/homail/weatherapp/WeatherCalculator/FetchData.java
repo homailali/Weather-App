@@ -21,9 +21,7 @@ public class FetchData extends AsyncTask<URL,Void,String>{
         String data=null;
         try {
             data=NetworkUtils.makeRequest(url);
-        } catch (Exception exception){
-            Log.d("inApi","Error on bg");
-        }
+        } catch (Exception exception){}
         return data;
     }
     @Override
@@ -43,8 +41,9 @@ public class FetchData extends AsyncTask<URL,Void,String>{
                 maxTemp=kelvinToCelsius(main.getDouble("temp_max"));
                 feelsLikeTemp=kelvinToCelsius(main.getDouble("feels_like"));
                 this.makeAndInitializeWDObj(maxTemp,minTemp,actualTemp,feelsLikeTemp);
-            } catch (Exception exception){}
+            } catch (Exception ignored){}
         } else {
+            Log.d("inApi","Problem in data fetching");
             WDHolder.getWdHolder().setWeatherData(null);
         }
     }

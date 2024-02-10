@@ -7,6 +7,7 @@ import androidx.appcompat.app.AppCompatActivity;
 public class WAppSearchPgMain extends AppCompatActivity{
     // Fields
     protected WaSPViews waSPViews;
+    protected TextFieldHandler textFieldHandler=new TextFieldHandler(this);
     protected GoBackBtnHandler goBackBtnHandler=new GoBackBtnHandler(this);
     protected CheckWBtnHandler checkWBtnHandler=new CheckWBtnHandler(this);
     // Methods

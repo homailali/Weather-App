@@ -10,8 +10,7 @@ import androidx.appcompat.app.AppCompatActivity;
 public class WeatherAppHomePage extends AppCompatActivity {
     // Fields
     protected WAppHomeViews wAppHomeViews;
-
-
+    protected SetValuesForTempInHP setValuesForTempInHP=new SetValuesForTempInHP(this);
     // Methods
     @Override
     public void onCreate(Bundle getCodeFromParent){
@@ -20,26 +19,11 @@ public class WeatherAppHomePage extends AppCompatActivity {
         this.changeStatusBarColor();
         this.wAHVObjectSettings();
     }
-
     @Override
     protected void onStart(){
         super.onStart();
-        if (WDHolder.getWdHolder().getIsIfAllowedToSetData()){
-            this.setValuesForTextFields();
-            WDHolder.getWdHolder().setIfAllowedToSetData(false);
-        }
+        this.setValuesForTempInHP.setValuesForTempInHPMain();
     }
-    private void setValuesForTextFields(){
-        this.wAppHomeViews.actualTempTv.setText(WDHolder.getWdHolder().getWeatherData().getActualTemp()+"°C");
-        this.wAppHomeViews.feelsLikeTv.setText("Feels like "+WDHolder.getWdHolder().getWeatherData().getFeelsLikeTemp()+"°C");
-        this.wAppHomeViews.minTempTv.setText("˅ "+WDHolder.getWdHolder().getWeatherData().getMinTemp()+"°C");
-        this.wAppHomeViews.maxTempTv.setText("^ "+WDHolder.getWdHolder().getWeatherData().getMaxTemp()+"°C");
-        this.wAppHomeViews.cityNameTv.setText(WDHolder.getWdHolder().getWeatherData().getCountryName());
-    }
-
-
-
-
     private void wAHVObjectSettings(){
 
         this.wAppHomeViews=new WAppHomeViews(this);

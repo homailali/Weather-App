@@ -1,15 +1,13 @@
 package life.homail.weatherapp.SearchPage;
-
 import android.os.Handler;
 import android.view.View;
-
 import life.homail.weatherapp.WDPlusWDHolder.WDHolder;
 import life.homail.weatherapp.WeatherCalculator.WCMain;
-
 public class CheckWBtnHandler implements View.OnClickListener{
     // Fields
     private String cityName;
     private WAppSearchPgMain wAppSearchPgMain;
+    private Handler handler=new Handler();
     // Constructor
     public CheckWBtnHandler(WAppSearchPgMain wAppSearchPgMain) {
         this.wAppSearchPgMain = wAppSearchPgMain;
@@ -18,27 +16,41 @@ public class CheckWBtnHandler implements View.OnClickListener{
     @Override
     public void onClick(View view){
         this.cityName=this.wAppSearchPgMain.waSPViews.textField.getText().toString();
-        if (cityName.isEmpty()) {
+        if (cityName.isBlank()) this.onError();
+        else this.performActions();
+    }
+    private void performActions(){
+        WCMain wcMain=new WCMain();
+        try {
+            wcMain.WCMainMethod(this.cityName);
+        } catch(Exception e){
             this.onError();
-        } else{
-            WCMain wcMain=new WCMain();
-            try {
-                wcMain.WCMainMethod(this.cityName);
-            } catch(Exception e){
-                this.onError();
-            }
-            this.onLastOfOnClickBtn();
+            return;
+        }
+        this.waitSomeTimeAndCheckResult();
+    }
+    private void waitSomeTimeAndCheckResult() {
+        int initialCount = 5;
+        this.makeWaitTimeTvVisibleAndInVisible(View.VISIBLE);
+        this.handler.removeCallbacksAndMessages(null);
+        this.updateCountAndTextView(initialCount);
+    }
+    private void updateCountAndTextView(int count){
+        this.wAppSearchPgMain.waSPViews.waitTimeTv.setText("Showing in " + count+"s");
+        if (count >= 0) {
+            this.handler.postDelayed(() -> updateCountAndTextView(count - 1),1000);
+        } else {
+            this.checkingIt();
         }
     }
-
-
-    private void onLastOfOnClickBtn(){
-        new Handler().postDelayed(()->{
-            if (WDHolder.getWdHolder().getWeatherData()==null) this.onError();
-            else this.ifWDHolderIsNotNull();
-        },10000);
+    private void checkingIt(){
+        if (WDHolder.getWdHolder().getWeatherData()==null) this.onError();
+        else this.ifWDHolderIsNotNull();
+        this.makeWaitTimeTvVisibleAndInVisible(View.INVISIBLE);
     }
-
+    private void makeWaitTimeTvVisibleAndInVisible(int visibility){
+        this.wAppSearchPgMain.waSPViews.waitTimeTv.setVisibility(visibility);
+    }
     private void ifWDHolderIsNotNull(){
         WDHolder.getWdHolder().setIfAllowedToSetData(true);
         this.wAppSearchPgMain.finish();
