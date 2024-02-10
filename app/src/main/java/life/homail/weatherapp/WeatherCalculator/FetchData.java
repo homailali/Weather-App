@@ -1,7 +1,6 @@
 package life.homail.weatherapp.WeatherCalculator;
 import android.os.AsyncTask;
 import android.util.Log;
-
 import org.json.JSONArray;
 import org.json.JSONObject;
 import java.net.URL;
@@ -9,11 +8,9 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Locale;
-
 import life.homail.weatherapp.WDPlusWDHolder.FeatureDataClass;
 import life.homail.weatherapp.WDPlusWDHolder.WDHolder;
 import life.homail.weatherapp.WDPlusWDHolder.CurrentWeatherData;
-
 public class FetchData extends AsyncTask<URL,Void,String>{
     // Fields
     private WCMain wcMain;
