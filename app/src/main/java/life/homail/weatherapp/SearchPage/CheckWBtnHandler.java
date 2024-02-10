@@ -1,6 +1,9 @@
 package life.homail.weatherapp.SearchPage;
 import android.os.Handler;
 import android.view.View;
+
+import java.util.ArrayList;
+
 import life.homail.weatherapp.WDPlusWDHolder.WDHolder;
 import life.homail.weatherapp.WeatherCalculator.WCMain;
 public class CheckWBtnHandler implements View.OnClickListener{
@@ -9,7 +12,7 @@ public class CheckWBtnHandler implements View.OnClickListener{
     private WAppSearchPgMain wAppSearchPgMain;
     private Handler handler=new Handler();
     // Constructor
-    public CheckWBtnHandler(WAppSearchPgMain wAppSearchPgMain) {
+    public CheckWBtnHandler(WAppSearchPgMain wAppSearchPgMain){
         this.wAppSearchPgMain = wAppSearchPgMain;
     }
     // Methods
@@ -20,6 +23,7 @@ public class CheckWBtnHandler implements View.OnClickListener{
         else this.performActions();
     }
     private void performActions(){
+        WDHolder.getWdHolder().setFeatureDataClassesArr(new ArrayList<>());
         WCMain wcMain=new WCMain();
         try {
             wcMain.WCMainMethod(this.cityName);
@@ -29,7 +33,7 @@ public class CheckWBtnHandler implements View.OnClickListener{
         }
         this.waitSomeTimeAndCheckResult();
     }
-    private void waitSomeTimeAndCheckResult() {
+    private void waitSomeTimeAndCheckResult(){
         int initialCount = 5;
         this.makeWaitTimeTvVisibleAndInVisible(View.VISIBLE);
         this.handler.removeCallbacksAndMessages(null);
@@ -44,7 +48,7 @@ public class CheckWBtnHandler implements View.OnClickListener{
         }
     }
     private void checkingIt(){
-        if (WDHolder.getWdHolder().getWeatherData()==null) this.onError();
+        if (WDHolder.getWdHolder().getCurrentWeatherData()==null) this.onError();
         else this.ifWDHolderIsNotNull();
         this.makeWaitTimeTvVisibleAndInVisible(View.INVISIBLE);
     }
@@ -57,6 +61,6 @@ public class CheckWBtnHandler implements View.OnClickListener{
     }
     private void onError(){
         this.wAppSearchPgMain.waSPViews.textField.setText(null);
-        this.wAppSearchPgMain.waSPViews.textField.setHint("Invalid city");
+        this.wAppSearchPgMain.waSPViews.textField.setHint("Invalid city or weak internet");
     }
 }

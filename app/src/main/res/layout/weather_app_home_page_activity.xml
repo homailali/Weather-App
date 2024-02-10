@@ -15,7 +15,7 @@
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/weather1"/>
+        app:srcCompat="@drawable/weather1" />
 
     <Button
         android:id="@+id/searchBtn"
@@ -28,10 +28,10 @@
         android:paddingTop="5dp"
         android:paddingEnd="0dp"
         android:paddingBottom="0dp"
-        app:rippleColor="#B3959499"
         app:cornerRadius="0dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:rippleColor="#B3959499" />
 
     <TextView
         android:id="@+id/cityNameTv"
@@ -40,7 +40,7 @@
         android:layout_marginStart="20dp"
         android:layout_marginTop="6dp"
         android:fontFamily="@font/baloo_bhai_2_semibold"
-        android:text="Search your city"
+        android:text="Search a city"
         android:textColor="@color/headingColor"
         android:textSize="23dp"
         app:layout_constraintStart_toStartOf="parent"
@@ -53,7 +53,7 @@
         android:layout_marginStart="20dp"
         android:layout_marginTop="20dp"
         android:fontFamily="@font/baloo_bhai_2_medium"
-        android:text="Feels like °C"
+        android:text="Feels like T°C"
         android:textColor="#A9A3C4"
         android:textSize="20dp"
         app:layout_constraintStart_toStartOf="parent"
@@ -63,15 +63,14 @@
         android:id="@+id/actualTempTv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="-10dp"
         android:layout_marginStart="20dp"
+        android:layout_marginTop="-10dp"
         android:fontFamily="@font/baloo_bhai_2_bold"
         android:text="T°C"
         android:textColor="@color/headingColor"
         android:textSize="60dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/feelsLikeTv" />
-
 
     <TextView
         android:id="@+id/minTempTv"
@@ -80,7 +79,7 @@
         android:layout_marginEnd="10dp"
         android:layout_marginBottom="23dp"
         android:fontFamily="@font/baloo_bhai_2_medium"
-        android:text="˅ min°C"
+        android:text="˅ min T°C"
         android:textColor="#959499"
         android:textSize="20dp"
         app:layout_constraintBottom_toTopOf="@+id/constraintLayout"
@@ -93,7 +92,7 @@
         android:layout_marginEnd="20dp"
         android:layout_marginBottom="23dp"
         android:fontFamily="@font/baloo_bhai_2_medium"
-        android:text="^ max°C"
+        android:text="^ max T°C"
         android:textColor="#959499"
         android:textSize="20dp"
         app:layout_constraintBottom_toTopOf="@+id/constraintLayout"
@@ -107,5 +106,28 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/actualTempTv"></androidx.constraintlayout.widget.ConstraintLayout>
+        app:layout_constraintTop_toBottomOf="@+id/actualTempTv">
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:fontFamily="@font/baloo_bhai_2_semibold"
+            android:text="Feature predictions"
+            android:textColor="@color/white"
+            android:textSize="30dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rcView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

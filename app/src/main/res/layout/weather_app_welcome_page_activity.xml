@@ -51,7 +51,7 @@
         android:layout_marginStart="20dp"
         android:fontFamily="@font/baloo_bhai_2_medium"
         android:gravity="left"
-        android:text="It's the newest app it has a bunch of features and that includes most of the one that every app has."
+        android:text="A simple weather app.The data that will be shown in the app will be three hours old then the current time."
         android:textColor="@color/white"
         android:textSize="15dp"
         app:layout_constraintEnd_toEndOf="@+id/foreCastAppHeading"

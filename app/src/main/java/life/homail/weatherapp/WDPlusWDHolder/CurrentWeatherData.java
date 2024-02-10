@@ -1,57 +1,69 @@
 package life.homail.weatherapp.WDPlusWDHolder;
 
-public class WeatherData{
+public class CurrentWeatherData {
     // Fields
     private String maxTemp;
     private String minTemp;
     private String actualTemp;
-    private String countryName;
+    private String cityName;
     private String feelsLikeTemp;
+
+
     // Constructor
-    public WeatherData(
+    public CurrentWeatherData(
             String maxTemp,
             String minTemp,
             String actualTemp,
             String feelsLikeTemp,
-            String countryName
+            String cityName
     ){
         this.maxTemp=maxTemp;
         this.minTemp=minTemp;
         this.actualTemp=actualTemp;
-        this.countryName=countryName;
+        this.cityName=cityName;
         this.feelsLikeTemp=feelsLikeTemp;
     }
     // Methods
     // Getters
     public String getMaxTemp() {
+
         return maxTemp;
     }
     public String getMinTemp() {
+
         return minTemp;
     }
     public String getActualTemp() {
+
         return actualTemp;
     }
-    public String getCountryName() {
-        return countryName;
+    public String getCityName() {
+
+        return cityName;
     }
     public String getFeelsLikeTemp() {
+
         return feelsLikeTemp;
     }
     // Setters
     public void setMinTemp(String minTemp) {
+
         this.minTemp = minTemp;
     }
     public void setActualTemp(String actualTemp) {
+
         this.actualTemp = actualTemp;
     }
-    public void setCountryName(String countryName) {
-        this.countryName = countryName;
+    public void setCityName(String cityName) {
+
+        this.cityName = cityName;
     }
     public void setFeelsLikeTemp(String feelsLikeTemp) {
+
         this.feelsLikeTemp = feelsLikeTemp;
     }
     public void setMaxTemp(String maxTemp) {
+
         this.maxTemp = maxTemp;
     }
 }

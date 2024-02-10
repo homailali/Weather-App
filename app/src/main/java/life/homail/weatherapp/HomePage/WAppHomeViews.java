@@ -3,6 +3,8 @@ import android.content.Intent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import androidx.recyclerview.widget.RecyclerView;
+import java.util.ArrayList;
 import life.homail.weatherapp.R;
 import life.homail.weatherapp.SearchPage.WAppSearchPgMain;
 public class WAppHomeViews{
@@ -14,6 +16,8 @@ public class WAppHomeViews{
     protected TextView cityNameTv;
     protected TextView feelsLikeTv;
     protected TextView actualTempTv;
+    // Rc View
+    protected RecyclerView rcView;
     // Main Activity
     private WeatherAppHomePage weatherAppHomePage;
     // Constructor
@@ -23,6 +27,7 @@ public class WAppHomeViews{
     }
     // Methods
     private void thingsToDoWhenConstrcutorIsInvoked(){
+        this.initializeRcView();
         this.initializeTextViews();
         this.initializeAndSetHandlerForSearchBtn();
     }
@@ -32,6 +37,9 @@ public class WAppHomeViews{
         this.cityNameTv=this.weatherAppHomePage.findViewById(R.id.cityNameTv);
         this.feelsLikeTv=this.weatherAppHomePage.findViewById(R.id.feelsLikeTv);
         this.actualTempTv=this.weatherAppHomePage.findViewById(R.id.actualTempTv);
+    }
+    private void initializeRcView(){
+        this.rcView=this.weatherAppHomePage.findViewById(R.id.rcView);
     }
     private void initializeAndSetHandlerForSearchBtn(){
         this.searchBtn=this.weatherAppHomePage.findViewById(R.id.searchBtn);
