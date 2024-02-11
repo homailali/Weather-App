@@ -34,7 +34,7 @@ public class CheckWBtnHandler implements View.OnClickListener{
         this.waitSomeTimeAndCheckResult();
     }
     private void waitSomeTimeAndCheckResult(){
-        int initialCount = 5;
+        int initialCount = 10;
         this.makeWaitTimeTvVisibleAndInVisible(View.VISIBLE);
         this.handler.removeCallbacksAndMessages(null);
         this.updateCountAndTextView(initialCount);
