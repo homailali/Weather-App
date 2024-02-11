@@ -13,6 +13,7 @@
         android:layout_height="287dp"
         android:layout_marginTop="20dp"
         android:src="@drawable/weather2"
+        app:layout_constraintBottom_toTopOf="@+id/weatherHeading"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -22,53 +23,55 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
+        android:layout_marginBottom="-20dp"
         android:fontFamily="@font/baloo_bhai_2_medium"
         android:text="Weather"
         android:textColor="@color/yellow"
         android:textSize="50dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView" />
+        app:layout_constraintBottom_toTopOf="@+id/foreCastAppHeading"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
         android:id="@+id/foreCastAppHeading"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
-        android:layout_marginTop="-20dp"
+        android:layout_marginBottom="-10dp"
         android:fontFamily="@font/baloo_bhai_2_medium"
         android:text="ForeCast App."
         android:textColor="@color/white"
         android:textSize="40dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/weatherHeading" />
+        app:layout_constraintBottom_toTopOf="@+id/mainPageParagraphAfterForecastAppHeading"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
         android:id="@+id/mainPageParagraphAfterForecastAppHeading"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
+        android:layout_marginBottom="10dp"
         android:fontFamily="@font/baloo_bhai_2_medium"
         android:gravity="left"
         android:text="A simple weather app.The data that will be shown in the app will be three hours old then the current time."
         android:textColor="@color/white"
         android:textSize="15dp"
+        app:layout_constraintBottom_toTopOf="@+id/getStartedBtn"
         app:layout_constraintEnd_toEndOf="@+id/foreCastAppHeading"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/foreCastAppHeading" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/getStartedBtn"
         android:layout_width="0dp"
         android:layout_height="70dp"
         android:layout_marginStart="70dp"
-        android:layout_marginTop="20dp"
         android:layout_marginEnd="70dp"
+        android:layout_marginBottom="40dp"
         android:backgroundTint="@color/yellow"
         android:fontFamily="@font/baloo_bhai_2_medium"
         android:text="Get Started"
         android:textSize="30dp"
         app:cornerRadius="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/mainPageParagraphAfterForecastAppHeading" />
+        app:layout_constraintStart_toStartOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

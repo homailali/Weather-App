@@ -48,18 +48,3 @@ public class WAHomePageMain extends AppCompatActivity {
         window.setStatusBarColor(Color.WHITE);
     }
 }
-
-
-
-/*
-  <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        android:background="@drawable/all_rounded_bg"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
- */
