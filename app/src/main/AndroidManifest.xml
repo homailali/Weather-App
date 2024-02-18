@@ -15,6 +15,7 @@
         android:theme="@style/Theme.WeatherApp"
         tools:targetApi="31">
         <activity
+            android:screenOrientation="portrait"
             android:name=".WelcomePage.WeatherAppWelcomePage"
             android:exported="true">
             <intent-filter>
@@ -23,8 +24,14 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".HomePage.WAHomePageMain"/>
-        <activity android:name=".SearchPage.WAppSearchPgMain"/>
+        <activity
+            android:name=".HomePage.WAHomePageMain"
+            android:screenOrientation="portrait"
+            />
+        <activity
+            android:name=".SearchPage.WAppSearchPgMain"
+            android:screenOrientation="portrait"
+            />
 
         <meta-data
             android:name="preloaded_fonts"
