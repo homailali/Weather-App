@@ -22,6 +22,7 @@
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/textField"
+            android:textColorHint="#7F7D80"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:fontFamily="@font/baloo_bhai_2_medium"
@@ -65,6 +66,7 @@
         android:layout_marginTop="30dp"
         android:text="Check weather"
         android:textSize="25dp"
+        android:textColor="@color/white"
         android:fontFamily="@font/baloo_bhai_2_medium"
         android:backgroundTint="@color/headingColor"
         app:cornerRadius="5dp"
